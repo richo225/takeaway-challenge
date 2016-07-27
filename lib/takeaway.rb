@@ -9,7 +9,7 @@ class TakeAway
   end
 
   def see_menu
-    @menu.display_dishes
+    @menu.dishes
   end
 
 end

@@ -5,7 +5,7 @@ describe Order do
   subject(:order) {Order.new}
 
   it "begins with an empty basket" do
-    expect(order.basket).to be_empty
+    expect(order.basket).to be nil
   end
   # before (:each) do
   #   takeaway.menu = {:dish => 2.99}

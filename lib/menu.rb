@@ -1,4 +1,6 @@
 class Menu
+attr_reader :dishes
+
   def initialize
     @dishes = {
       :wonton_soup => 2.99,
@@ -8,10 +10,6 @@ class Menu
       :chow_mein => 9.99,
       :roasted_duck => 9.99
     }
-  end
-
-  def display_dishes
-    @dishes
   end
 
 end

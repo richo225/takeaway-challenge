@@ -3,49 +3,56 @@ require "takeaway"
 describe TakeAway do
   subject(:takeaway) {TakeAway.new}
 
-  # describe "#initialize" do
-  #   it "begins with a menu" do
-  #     expect(takeaway.menu).to_not be nil
-  #   end
-  # end
+  context "no order made" do
+    # describe "#initialize" do
+    #   it "begins with no order made" do
+    #     expect(takeaway.order).to eq nil
+    #   end
+    # end
 
-  describe "#see_menu" do
-    it "displays the menu list" do
-      expect(takeaway.see_menu).to_not be_nil
+    describe "#see_menu" do
+      it "displays the menu list" do
+        expect(takeaway.see_menu).to include(:wonton_soup)
+      end
     end
   end
+
+  # context "order made" do
+  #   describe "#make_order" do
+  #   before (:each) do
+  #   takeaway.menu.dishes = {:dish => 2.99}
+  #   end
+  #     it "adds one ordered dish to basket as default" do
+  #       takeaway.make_order(:dish)
+  #       expect(takeaway.basket).to eq [{:dish => 2.99}]
+  #     end
+  #       it "adds multiple ordered dishes to basket" do
+  #         takeaway.order(:dish, 3)
+  #         expect(takeaway.basket).to eq [{:dish => 2.99}, {:dish => 2.99}, {:dish => 2.99}]
+  #       end
+  #       it "assigns prices to ordered dishes" do
+  #         takeaway.order(:dish)
+  #         expect(takeaway.basket[0]).to eq :dish => 2.99
+  #       end
+  #       it "confirms the order" do
+  #         expect(takeaway.order(:dish, 3)).to eq "3x dish(s) added to your basket."
+  #       end
+  #     end
+
+    #   describe "#see_basket" do
+    #     before (:each) do
+    #       takeaway.menu = {:dish => 2.99}
+    #       takeaway.order(:dish)
+    #     end
+    #     it "displays the basket" do
+    #       expect(takeaway.see_basket).to eq takeaway.basket
+    #     end
+    #   end
+
+#   end
 end
 
-#   describe "#order" do
-#     before (:each) do
-#       takeaway.menu = {:dish => 2.99}
-#     end
-#     it "adds one ordered dish to basket as default" do
-#       takeaway.order(:dish)
-#       expect(takeaway.basket).to eq [{:dish => 2.99}]
-#     end
-#     it "adds multiple ordered dishes to basket" do
-#       takeaway.order(:dish, 3)
-#       expect(takeaway.basket).to eq [{:dish => 2.99}, {:dish => 2.99}, {:dish => 2.99}]
-#     end
-#     it "assigns prices to ordered dishes" do
-#       takeaway.order(:dish)
-#       expect(takeaway.basket[0]).to eq :dish => 2.99
-#     end
-#     it "confirms the order" do
-#       expect(takeaway.order(:dish, 3)).to eq "3x dish(s) added to your basket."
-#     end
-#   end
-
-#   describe "#see_basket" do
-#     before (:each) do
-#       takeaway.menu = {:dish => 2.99}
-#       takeaway.order(:dish)
-#     end
-#     it "displays the basket" do
-#       expect(takeaway.see_basket).to eq takeaway.basket
-#     end
-#   end
+#
 #
 #   describe "#basket_total" do
 #     it "gives the total price of the basket" do
